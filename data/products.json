@@ -1,9 +1,1 @@
-[
-  {
-    "id": "1",
-    "title": "Book 1",
-    "imageUrl": "https://clipart-library.com/images/6Tpo6G8TE.jpg",
-    "description": "the book",
-    "price": "19"
-  }
-]
+[{"id":"1","title":"Book 1","imageUrl":"https://clipart-library.com/images/6Tpo6G8TE.jpg","description":"the book","price":"19"},{"id":"0.17863456918103848","title":"  Book 2  ","imageUrl":"   https://img.freepik.com/free-vector/cute-boy-standing-position-showing-thumb_96037-450.jpg?w=2000   ","description":"   cartoon book   ","price":"   12  "}]

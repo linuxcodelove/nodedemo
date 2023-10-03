@@ -21,17 +21,27 @@ const writeFile = (products) => {
 };
 
 module.exports = class Product {
-  constructor(title, imageUrl, description, price) {
+  constructor(id, title, imageUrl, description, price) {
+    this.id = id;
     this.title = title;
     this.imageUrl = imageUrl;
     this.description = description;
     this.price = price;
   }
   save() {
-    this.id = Math.random().toString();
     getProductsFromFile((products) => {
-      products.push(this);
-      writeFile(products);
+      if (this.id) {
+        const existingProductIndex = products.findIndex(
+          (p) => p.id === this.id
+        );
+        const updatedProducts = [...products];
+        updatedProducts[existingProductIndex] = this;
+        writeFile(updatedProducts);
+      } else {
+        this.id = Math.random().toString();
+        products.push(this);
+        writeFile(products);
+      }
     });
   }
   static fetchAll(cb) {
